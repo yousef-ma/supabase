@@ -9,15 +9,15 @@
       "path": "/*",
       "target": {
         "kind": "Compute",
-        "src": "default"
+        "src": "apps"
       }
     }
   ],
   "computeResources": [
     {
-      "name": "default",
+      "name": "apps",
       "runtime": "nodejs20.x",
-      "entrypoint": "apps/studio/server.js"
+      "entrypoint": "studio/server.js"
     }
   ]
 }
