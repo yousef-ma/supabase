@@ -1,0 +1,50 @@
+{
+    "version": 1,
+    "framework": {
+      "name": "nextjs",
+      "version": "15.3.1"
+    },
+    "routes": [
+      {
+        "path": "/_next/image*",
+        "target": {
+          "kind": "ImageOptimization",
+          "cacheControl": "public, max-age=3600, immutable"
+        }
+      },
+      {
+        "path": "/*.*",
+        "target": {
+          "kind": "Static",
+          "cacheControl": "public, max-age=0, s-maxage=2678400, must-revalidate"
+        },
+        "fallback": {
+          "kind": "Compute",
+          "src": "default"
+        }
+      },
+      {
+        "path": "/*",
+        "target": {
+          "kind": "Compute",
+          "src": "default"
+        }
+      }
+    ],
+    "computeResources": [
+      {
+        "name": "default",
+        "runtime": "nodejs20.x",
+        "entrypoint": "apps/studio/server.js"
+      }
+    ],
+    "imageSettings": {
+      "sizes": [100, 200, 1920],
+      "formats": ["image/webp"],
+      "minimumCacheTTL": 60,
+      "domains": [],
+      "remotePatterns": [],
+      "dangerouslyAllowSVG": false
+    }
+  }
+  
