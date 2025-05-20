@@ -14,10 +14,6 @@
       },
       {
         "path": "/*.*",
-        "target": {
-          "kind": "Static",
-          "cacheControl": "public, max-age=0, s-maxage=2678400, must-revalidate"
-        },
         "fallback": {
           "kind": "Compute",
           "src": "default"
