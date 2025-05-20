@@ -4,20 +4,11 @@
     "name": "nextjs",
     "version": "15.3.1"
   },
-  "routes": [
-    {
-      "path": "/*",
-      "target": {
-        "kind": "Compute",
-        "src": "default"
-      }
-    }
-  ],
   "computeResources": [
     {
       "name": "default",
       "runtime": "nodejs20.x",
-      "entrypoint": "apps/studio/server.js"
+      "entrypoint": "compute/server.js"
     }
   ]
 }
