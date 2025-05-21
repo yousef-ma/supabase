@@ -1,13 +1,12 @@
 {
   "version": 1,
-  "framework": {
-      "name": "nextjs",
-      "version": "15.3.1"
-    },
   "routes": [
     {
       "path": "/*",
       "ssr": true,
+      "data": {
+        "enableStaticRewrites": true
+      },
       "rewrite": {
         "source": "/*",
         "destination": "/apps/studio/server.js"
@@ -16,6 +15,11 @@
     {
       "path": "/_next/static/*",
       "static": true
+    },
+    {
+      "path": "/*.*",
+      "status": 200,
+      "target": "static"
     }
   ]
 }
