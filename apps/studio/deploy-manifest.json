@@ -4,6 +4,15 @@
     "name": "nextjs",
     "version": "15.3.1"
   },
+  "routes": [
+    {
+      "path": "/*",
+      "target": {
+        "kind": "Compute",
+        "src": "default"
+      }
+    }
+  ],
   "computeResources": [
     {
       "name": "default",
