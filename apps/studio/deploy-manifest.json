@@ -9,13 +9,13 @@
       "path": "/*",
       "target": {
         "kind": "Compute",
-        "src": "studio"
+        "src": "default"
       }
     }
   ],
   "computeResources": [
     {
-      "name": "studio",
+      "name": "default",
       "runtime": "nodejs20.x",
       "entrypoint": "server.js"
     }
