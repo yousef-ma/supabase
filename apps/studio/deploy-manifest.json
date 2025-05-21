@@ -17,7 +17,7 @@
     {
       "name": "default",
       "runtime": "nodejs20.x",
-      "entrypoint": "apps/studio/server.js"
+      "entrypoint": "compute/server.js"
     }
   ]
 }
