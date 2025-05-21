@@ -1,25 +1,49 @@
 {
   "version": 1,
+  "framework": {
+  "name": "nextjs",
+  "version": "15.3.1"
+  },
   "routes": [
     {
+      "path": "/_next/static/*",
+      "target": "static",
+      "exact": false
+    },
+    {
+      "path": "/static/*",
+      "target": "static",
+      "exact": false
+    },
+    {
+      "path": "/*.js",
+      "target": "static",
+      "exact": false
+    },
+    {
+      "path": "/*.json",
+      "target": "static",
+      "exact": false
+    },
+    {
+      "path": "/favicon.ico",
+      "target": "static",
+      "exact": true
+    },
+    {
       "path": "/*",
-      "ssr": true,
-      "data": {
-        "enableStaticRewrites": true
-      },
+      "target": "server",
+      "exact": false,
       "rewrite": {
         "source": "/*",
         "destination": "/apps/studio/server.js"
       }
-    },
-    {
-      "path": "/_next/static/*",
-      "static": true
-    },
-    {
-      "path": "/*.*",
-      "status": 200,
-      "target": "static"
     }
-  ]
+  ],
+  "server": {
+    "runtime": "nodejs20.x",
+    "handler": "server.js",
+    "launcherType": "Nextjs",
+    "regions": ["us-east-1"]
+  }
 }
