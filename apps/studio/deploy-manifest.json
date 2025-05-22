@@ -1,17 +1,29 @@
 {
-  "version": "1.0",
+  "version": 1,
+  "framework": {
+    "name": "nextjs",
+    "version": "15.3.1"
+  },
   "routes": [
     {
       "path": "/*",
-      "ssr": true,
-      "next": {
-        "dynamic": true,
-        "page": "/*"
+      "target": {
+        "kind": "Compute",
+        "src": "default"
       }
     },
+	{
+	  "path": "/_next/static/*",
+	  "target": {
+	    "kind": "Static"
+	  }
+    }
+  ],
+  "computeResources": [
     {
-      "path": "/_next/static/*",
-      "static": true
+      "name": "default",
+      "runtime": "nodejs20.x",
+      "entrypoint": "server.js"
     }
   ]
 }
