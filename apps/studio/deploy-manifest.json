@@ -11,13 +11,6 @@
         "kind": "Compute",
         "src": "default"
       }
-    },
-	{
-	  "path": "/_next/static/*",
-	  "target": {
-	    "kind": "Static"
-	  }
-    }
   ],
   "computeResources": [
     {
